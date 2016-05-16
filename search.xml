@@ -58,7 +58,7 @@
     
     <entry>
       <title><![CDATA[伪类的用法]]></title>
-      <url>http://liushengguang.github.io/2016/05/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+      <url>http://liushengguang.github.io/2015/11/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
       <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
 <p>love:link,visited;</p>
 <p>hate:hover,active;</p>
