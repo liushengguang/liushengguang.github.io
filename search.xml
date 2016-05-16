@@ -62,6 +62,7 @@
       <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
 <p>love:link,visited;</p>
 <p>hate:hover,active;</p>
+<a id="more"></a>
 <h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>first-line</p>
 <p>first-letter</p>
 <p>selection</p>
