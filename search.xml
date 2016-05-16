@@ -4,6 +4,59 @@
   
     
     <entry>
+      <title><![CDATA[如何使用gulp对文件进行压缩]]></title>
+      <url>http://liushengguang.github.io/2016/05/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gulp%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9/</url>
+      <content type="html"><![CDATA[<h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><p>1、创建项目文件夹，然后项目初始化：$ npm init ;</p>
+<p>2、全局安装gulp：$ npm install –global gulp ;</p>
+<p>3、作为项目的开发依赖（devDependencies）安装：$ npm install –save-dev gulp ;<br><a id="more"></a><br>4、在创建的文件夹下，创建一个名为gulpfile.js的文件，内容为：</p>
+<p>var gulp=require(‘gulp’)</p>
+<p>gulp.task(‘default’,function(){//将你的任务代码放在这})</p>
+<p>5、运行gulp：$ gulp </p>
+<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
+<p>想要单独执行特定的任务（task），请输入 gulp <task> <othertask>。</othertask></task></p>
+<h3 id="文件合并gulp-concat的用法"><a href="#文件合并gulp-concat的用法" class="headerlink" title="文件合并gulp-concat的用法"></a>文件合并gulp-concat的用法</h3><p>1、安装：$ sudo npm install gulp-concat –save-dev gulp</p>
+<p>2、在gulpfile.js文件中加入：</p>
+<p>var concat = require(‘gulp-concat’);//调用gulp的concat插件</p>
+<p>gulp.task(‘default’, function() {//任务</p>
+<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
+<p>  js文件的地址</p>
+<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
+<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
+<p>});</p>
+<p>3、运行gulp：默认执行default函数</p>
+<h3 id="js代码压缩gulp-jsmin的用法"><a href="#js代码压缩gulp-jsmin的用法" class="headerlink" title="js代码压缩gulp-jsmin的用法"></a>js代码压缩gulp-jsmin的用法</h3><p>1、安装：$ sudo npm install gulp-jsmin –save-dev gulp</p>
+<p>2、在gulpfile.js文件中加入：</p>
+<p>var jsmin=requir(‘gulp-jsmin’);;//调用gulp的jsmin插件</p>
+<p>gulp.task(‘default’, function() {//任务</p>
+<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
+<p>  js文件的地址</p>
+<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
+<p>  .pipe(jsmin())//将js文件进行最小化压缩</p>
+<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
+<p>});</p>
+<p>3、运行gulp：默认执行default函数</p>
+<h3 id="HTML代码压缩"><a href="#HTML代码压缩" class="headerlink" title="HTML代码压缩"></a>HTML代码压缩</h3><p>1、安装：$ sudo npm install gulp-htmlmin –save-dev gulp</p>
+<p>2、在gulpfile.js文件中加入：</p>
+<p>var jsmin=requir(‘gulp-htmlmin’);;//调用gulp的htmlmin插件</p>
+<p>gulp.task(‘default’, function() {//任务</p>
+<p>  return gulp.src(‘index/*.html’)//获取index文件夹下html文件的地址</p>
+<p>  .pipe(htmlmin({collapseWhitespace: true}))//将html文件进行最小化压缩</p>
+<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
+<p>});</p>
+<p>3、运行gulp：默认执行default函数</p>
+<h3 id="css代码压缩"><a href="#css代码压缩" class="headerlink" title="css代码压缩"></a>css代码压缩</h3><p>1、安装：$ sudo npm install gulp-cssmin –save-dev gulp</p>
+<p>2、在gulpfile.js文件中加入：</p>
+<p>var jsmin=requir(‘gulp-cssmin’);;//调用gulp的cssmin插件</p>
+<p>gulp.task(‘default’, function() {//任务</p>
+<p>  return gulp.src(‘index/*.css’)//获取index文件夹下css文件的地址</p>
+<p>  .pipe(cssmin())//将css文件进行最小化压缩</p>
+<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
+<p>});</p>
+<p>3、运行gulp：默认执行default函数</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[伪类的用法]]></title>
       <url>http://liushengguang.github.io/2016/05/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
       <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
