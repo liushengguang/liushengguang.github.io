@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何使用gulp对文件进行压缩 | 阳光和妳同在</title>
+  <title>创建git仓库 | 阳光和妳同在</title>
   <meta name="author" content="刘圣光">
   
   <meta name="description" content="网络、技术、交流">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="如何使用gulp对文件进行压缩"/>
+  <meta property="og:title" content="创建git仓库"/>
   <meta property="og:site_name" content="阳光和妳同在"/>
 
   
@@ -103,7 +103,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> 如何使用gulp对文件进行压缩</h1>
+			<h1 class="title title-inverse "> 创建git仓库</h1>
 		</div>		
 	
 
@@ -123,53 +123,19 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><p>1、创建项目文件夹，然后项目初始化：$ npm init ;</p>
-<p>2、全局安装gulp：$ npm install –global gulp ;</p>
-<p>3、作为项目的开发依赖（devDependencies）安装：$ npm install –save-dev gulp ;<br><a id="more"></a><br>4、在创建的文件夹下，创建一个名为gulpfile.js的文件，内容为：</p>
-<p>var gulp=require(‘gulp’)</p>
-<p>gulp.task(‘default’,function(){//将你的任务代码放在这})</p>
-<p>5、运行gulp：$ gulp </p>
-<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
-<p>想要单独执行特定的任务（task），请输入 gulp <task> <othertask>。</othertask></task></p>
-<h3 id="文件合并gulp-concat的用法"><a href="#文件合并gulp-concat的用法" class="headerlink" title="文件合并gulp-concat的用法"></a>文件合并gulp-concat的用法</h3><p>1、安装：$ sudo npm install gulp-concat –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var concat = require(‘gulp-concat’);//调用gulp的concat插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
-<p>  js文件的地址</p>
-<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="js代码压缩gulp-jsmin的用法"><a href="#js代码压缩gulp-jsmin的用法" class="headerlink" title="js代码压缩gulp-jsmin的用法"></a>js代码压缩gulp-jsmin的用法</h3><p>1、安装：$ sudo npm install gulp-jsmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-jsmin’);;//调用gulp的jsmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
-<p>  js文件的地址</p>
-<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
-<p>  .pipe(jsmin())//将js文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="HTML代码压缩"><a href="#HTML代码压缩" class="headerlink" title="HTML代码压缩"></a>HTML代码压缩</h3><p>1、安装：$ sudo npm install gulp-htmlmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-htmlmin’);;//调用gulp的htmlmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.html’)//获取index文件夹下html文件的地址</p>
-<p>  .pipe(htmlmin({collapseWhitespace: true}))//将html文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="css代码压缩"><a href="#css代码压缩" class="headerlink" title="css代码压缩"></a>css代码压缩</h3><p>1、安装：$ sudo npm install gulp-cssmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-cssmin’);;//调用gulp的cssmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.css’)//获取index文件夹下css文件的地址</p>
-<p>  .pipe(cssmin())//将css文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
+	  <h3 id="注册git，设置用户名和邮箱地址"><a href="#注册git，设置用户名和邮箱地址" class="headerlink" title="注册git，设置用户名和邮箱地址"></a>注册git，设置用户名和邮箱地址</h3><p>1、git config –global user.name “Your Name”#配置用户名</p>
+<p>2、git config –global user.email “email@example.com”#配置邮箱</p>
+<h3 id="服务器上的Git-生成SSH公钥"><a href="#服务器上的Git-生成SSH公钥" class="headerlink" title="服务器上的Git - 生成SSH公钥"></a>服务器上的Git - 生成SSH公钥</h3><p>登陆github生成SSHkey公钥<br>ssh-keygen 会确认密钥的存储位置（默认是 .ssh/id_rsa），然后它会要求</p>
+<p>你输入两次密钥口令。如果你不想在使用密钥时输入口令，将其留空即可。</p>
+<p>vim ~/.ssh/id_rsa.pub 显示.pub 文件内容（即key）</p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>创建新文件夹，进入</p>
+<p>git init //以创建新的 git 仓库</p>
+<h3 id="添加提交"><a href="#添加提交" class="headerlink" title="添加提交"></a>添加提交</h3><p>git clone      #创建一个本地仓库的克隆版本</p>
+<p>git status      #查看当前的仓库状态</p>
+<p>git add .     #生成快照并存入项目索引</p>
+<p>git commit -m “修改说明”   #改动项目提交到暂存区</p>
+<p>git push -u origin master #改动提交到远端仓库</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>初次创建账户之后，以后每次添加，只需要执行git add .之后的命令</p>
 	  
 	</div>
 
@@ -178,14 +144,14 @@ var _hmt = _hmt || [];
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2016/05/16/创建git仓库/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/11/12/伪类的用法/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2016/05/16/如何使用gulp对文件进行压缩/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -224,7 +190,7 @@ var _hmt = _hmt || [];
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2016/05/16/如何使用gulp对文件进行压缩/" data-title="如何使用gulp对文件进行压缩" data-url="http://liushengguang.github.io/2016/05/16/如何使用gulp对文件进行压缩/"></div>  
+  	 <div class="ds-thread" data-thread-key="2016/05/16/创建git仓库/" data-title="创建git仓库" data-url="http://liushengguang.github.io/2016/05/16/创建git仓库/"></div>  
   
 </section>
 
