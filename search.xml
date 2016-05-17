@@ -78,10 +78,10 @@
     <entry>
       <title><![CDATA[学习使用gulp-jade模板引擎]]></title>
       <url>http://liushengguang.github.io/2015/11/19/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8gulp-jade%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</url>
-      <content type="html"><![CDATA[<p>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，</p>
-<p>对于日益庞大的前端页面来说，还是用老的字符串拼接的方法来嵌入html内容已经</p>
-<p>不适应当下的开发趋势了。</p>
-<h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><a id="more"></a>
+      <content type="html"><![CDATA[<pre><code>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，对于日益庞大的前端页面
+
+来说，还是用老的字符串拼接的方法来嵌入html内容已经不适应当下的开发趋势了。
+</code></pre><h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><a id="more"></a>
 <pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
 
 其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
