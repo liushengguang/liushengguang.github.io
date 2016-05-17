@@ -62,7 +62,7 @@ img、meta、link等自闭合标签会自动识别，也可在标签后添加/�
 
 来说，还是用老的字符串拼接的方法来嵌入html内容已经不适应当下的开发趋势了。
 </code></pre><h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><a id="more"></a>
-<pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
+<pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法[这里有更详尽的步骤](http://www.tuicool.com/articles/FJVNZf)
 
 其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
 
