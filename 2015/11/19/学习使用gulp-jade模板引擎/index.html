@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何使用gulp对文件进行压缩 | 阳光和妳同在</title>
+  <title>学习使用gulp-jade模板引擎 | 阳光和妳同在</title>
   <meta name="author" content="刘圣光">
   
   <meta name="description" content="网络、技术、交流">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="如何使用gulp对文件进行压缩"/>
+  <meta property="og:title" content="学习使用gulp-jade模板引擎"/>
   <meta property="og:site_name" content="阳光和妳同在"/>
 
   
@@ -103,7 +103,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> 如何使用gulp对文件进行压缩</h1>
+			<h1 class="title title-inverse "> 学习使用gulp-jade模板引擎</h1>
 		</div>		
 	
 
@@ -123,53 +123,26 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><p>1、创建项目文件夹，然后项目初始化：$ npm init ;</p>
-<p>2、全局安装gulp：$ npm install –global gulp ;</p>
-<p>3、作为项目的开发依赖（devDependencies）安装：$ npm install –save-dev gulp ;<br><a id="more"></a><br>4、在创建的文件夹下，创建一个名为gulpfile.js的文件，内容为：</p>
-<p>var gulp=require(‘gulp’)</p>
-<p>gulp.task(‘default’,function(){//将你的任务代码放在这})</p>
-<p>5、运行gulp：$ gulp </p>
-<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
-<p>想要单独执行特定的任务（task），请输入 gulp <task> <othertask>。</othertask></task></p>
-<h3 id="文件合并gulp-concat的用法"><a href="#文件合并gulp-concat的用法" class="headerlink" title="文件合并gulp-concat的用法"></a>文件合并gulp-concat的用法</h3><p>1、安装：$ sudo npm install gulp-concat –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var concat = require(‘gulp-concat’);//调用gulp的concat插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
-<p>  js文件的地址</p>
-<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="js代码压缩gulp-jsmin的用法"><a href="#js代码压缩gulp-jsmin的用法" class="headerlink" title="js代码压缩gulp-jsmin的用法"></a>js代码压缩gulp-jsmin的用法</h3><p>1、安装：$ sudo npm install gulp-jsmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-jsmin’);;//调用gulp的jsmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.js’)//获取index文件夹需要合并的</p>
-<p>  js文件的地址</p>
-<p>  .pipe(concat(‘all.js’))//合并到新文件all.js中</p>
-<p>  .pipe(jsmin())//将js文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="HTML代码压缩"><a href="#HTML代码压缩" class="headerlink" title="HTML代码压缩"></a>HTML代码压缩</h3><p>1、安装：$ sudo npm install gulp-htmlmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-htmlmin’);;//调用gulp的htmlmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.html’)//获取index文件夹下html文件的地址</p>
-<p>  .pipe(htmlmin({collapseWhitespace: true}))//将html文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
-<h3 id="css代码压缩"><a href="#css代码压缩" class="headerlink" title="css代码压缩"></a>css代码压缩</h3><p>1、安装：$ sudo npm install gulp-cssmin –save-dev gulp</p>
-<p>2、在gulpfile.js文件中加入：</p>
-<p>var jsmin=requir(‘gulp-cssmin’);;//调用gulp的cssmin插件</p>
-<p>gulp.task(‘default’, function() {//任务</p>
-<p>  return gulp.src(‘index/*.css’)//获取index文件夹下css文件的地址</p>
-<p>  .pipe(cssmin())//将css文件进行最小化压缩</p>
-<p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
-<p>});</p>
-<p>3、运行gulp：默认执行default函数</p>
+	  <p>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，</p>
+<p>对于日益庞大的前端页面来说，还是用老的字符串拼接的方法来嵌入html内容已经</p>
+<p>不适应当下的开发趋势了。</p>
+<h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
+
+其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
+
+2、安装gulp-jade插件，命令：$ npm install -g --save-dev gulp-jade
+
+如果需要权限就在npm之前加上sudo。
+</code></pre><h3 id="2、使用gulp-jade来构建前端模版"><a href="#2、使用gulp-jade来构建前端模版" class="headerlink" title="2、使用gulp-jade来构建前端模版"></a>2、使用gulp-jade来构建前端模版</h3><pre><code>1、创建一个名为jade的文件夹，在文件夹里创建一个名为jade.jade的文件。
+
+2、在jade.jade文件内写上jade规模的模版代码，如下：
+</code></pre><p><img src="http://i2.buimg.com/ebc79103a7bd6b6e.png" alt=""></p>
+<pre><code>3、在jade文件夹同级文件里找到或创建一个名为gulpfile.js的文件，编辑如下内容：
+</code></pre><p><img src="http://i2.buimg.com/619879541b38d409.png" alt=""></p>
+<pre><code>4、在jade文件夹中运行gulp-jade，命令：$ gulp jade 
+
+5、看下在新生成的newhtml文件夹下生成的jade.html：
+</code></pre><p><img src="http://i4.buimg.com/b0843e3bc8b92377.png" alt=""></p>
 	  
 	</div>
 
@@ -179,13 +152,13 @@ var _hmt = _hmt || [];
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2016/05/16/创建git仓库/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2016/05/16/如何使用gulp对文件进行压缩/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/11/19/学习使用gulp-jade模板引擎/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2015/11/12/伪类的用法/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -224,7 +197,7 @@ var _hmt = _hmt || [];
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2016/05/16/如何使用gulp对文件进行压缩/" data-title="如何使用gulp对文件进行压缩" data-url="http://liushengguang.github.io/2016/05/16/如何使用gulp对文件进行压缩/"></div>  
+  	 <div class="ds-thread" data-thread-key="2015/11/19/学习使用gulp-jade模板引擎/" data-title="学习使用gulp-jade模板引擎" data-url="http://liushengguang.github.io/2015/11/19/学习使用gulp-jade模板引擎/"></div>  
   
 </section>
 
@@ -238,7 +211,7 @@ var _hmt = _hmt || [];
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016-05-16 
+	2015-11-19 
 	</div>
 	
 

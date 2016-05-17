@@ -76,6 +76,32 @@
     </entry>
     
     <entry>
+      <title><![CDATA[学习使用gulp-jade模板引擎]]></title>
+      <url>http://liushengguang.github.io/2015/11/19/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8gulp-jade%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</url>
+      <content type="html"><![CDATA[<p>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，</p>
+<p>对于日益庞大的前端页面来说，还是用老的字符串拼接的方法来嵌入html内容已经</p>
+<p>不适应当下的开发趋势了。</p>
+<h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
+
+其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
+
+2、安装gulp-jade插件，命令：$ npm install -g --save-dev gulp-jade
+
+如果需要权限就在npm之前加上sudo。
+</code></pre><h3 id="2、使用gulp-jade来构建前端模版"><a href="#2、使用gulp-jade来构建前端模版" class="headerlink" title="2、使用gulp-jade来构建前端模版"></a>2、使用gulp-jade来构建前端模版</h3><pre><code>1、创建一个名为jade的文件夹，在文件夹里创建一个名为jade.jade的文件。
+
+2、在jade.jade文件内写上jade规模的模版代码，如下：
+</code></pre><p><img src="http://i2.buimg.com/ebc79103a7bd6b6e.png" alt=""></p>
+<pre><code>3、在jade文件夹同级文件里找到或创建一个名为gulpfile.js的文件，编辑如下内容：
+</code></pre><p><img src="http://i2.buimg.com/619879541b38d409.png" alt=""></p>
+<pre><code>4、在jade文件夹中运行gulp-jade，命令：$ gulp jade 
+
+5、看下在新生成的newhtml文件夹下生成的jade.html：
+</code></pre><p><img src="http://i4.buimg.com/b0843e3bc8b92377.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[伪类的用法]]></title>
       <url>http://liushengguang.github.io/2015/11/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
       <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
