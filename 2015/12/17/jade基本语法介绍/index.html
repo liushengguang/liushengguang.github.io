@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>nodejs的运用 | 阳光和妳同在</title>
+  <title>jade基本语法介绍 | 阳光和妳同在</title>
   <meta name="author" content="刘圣光">
   
   <meta name="description" content="网络、技术、交流">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="nodejs的运用"/>
+  <meta property="og:title" content="jade基本语法介绍"/>
   <meta property="og:site_name" content="阳光和妳同在"/>
 
   
@@ -103,7 +103,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> nodejs的运用</h1>
+			<h1 class="title title-inverse "> jade基本语法介绍</h1>
 		</div>		
 	
 
@@ -123,8 +123,53 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p><a href="http://25.io/mou/" target="_blank" rel="external">http://25.io/mou/</a></p>
-	  
+	  <pre><code>之前在博客中介绍了jade模版，在接下来的使用过程中，越来越觉得语法规范化的重要，今天抽
+
+空在这里总结一下这些天使用jade模版的心得。
+</code></pre><h3 id="tag标签"><a href="#tag标签" class="headerlink" title="tag标签"></a>tag标签</h3><a id="more"></a>
+<pre><code>标签都是通过TAB缩进，来代替HTML中的层级包含关系
+
+1、内联书写层级
+
+a、img标签 通过分号区分元素内内容
+
+2、自闭合标签
+
+img、meta、link等自闭合标签会自动识别，也可在标签后添加/强制输出自闭合元素
+</code></pre><h3 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a>style属性</h3><pre><code>图中已完美呈现：
+</code></pre><p><img src="http://i2.buimg.com/ad2c31dddb2630ac.png" alt=""></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><pre><code>使用“=”输出变量值到元素内
+</code></pre><p><img src="http://i3.buimg.com/3756e05d5c6c77e1.png" alt=""></p>
+<pre><code>通过 #{variable} 插入相应的变量值
+</code></pre><p><img src="http://i3.buimg.com/a76c3fe55ede6659.png" alt=""></p>
+<pre><code>这个没怎么用到，先提一提！
+</code></pre><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>html 元素属性通过在标签右边通过括号包含（此处逗号可拆分为多行书写属性的格式）
+</code></pre><p><img src="http://i3.buimg.com/3d2b6547ccac5e80.png" alt=""></p>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><pre><code>通过在文字前面添加竖线符号“|”可让 jade 原样输出内容
+
+在html标签标记后面通过空格隔开文本内容
+
+在html标签标记后通过添加英文句号“.”添加块级文本
+
+上面3个形式的方式效果为：
+</code></pre><p><img src="http://i2.buimg.com/03aaf3cdaf2fcf42.png" alt=""></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre><code>可以通过双斜杠进行注释，jade有3种注释方式，可以分别对应输出html注释、不输出html注
+
+释、块级html注释：
+</code></pre><p><img src="http://i4.buimg.com/e03acb3fb5070e2e.png" alt=""></p>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><pre><code>jade支持通过js语法形式运行一些表达式，最简单常用的就一个迭代可以表达为：
+</code></pre><p><img src="http://i4.buimg.com/19d7527fdf4c7c50.png" alt=""></p>
+<p>是不是很好用！！！</p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><pre><code>jade 支持 if 、case条件判断，类比js的相应语法：
+</code></pre><p><img src="http://i4.buimg.com/612ab8fed6ddbab9.png" alt=""></p>
+<p>js可以直接写在里面，是不是很神奇！！！</p>
+<h3 id="Include"><a href="#Include" class="headerlink" title="Include"></a>Include</h3><pre><code>include.jade文件
+</code></pre><p><img src="http://i4.buimg.com/477132afb83b0227.png" alt=""></p>
+<pre><code>head.jade文件
+</code></pre><p><img src="http://i4.buimg.com/d9f5870bbf65b825.png" alt=""></p>
+<pre><code>包含文件
+</code></pre><p><img src="http://i4.buimg.com/5eb3fcd2f12bbea9.png" alt=""></p>
+<h3 id="今天先到这，以后有新内容再更。"><a href="#今天先到这，以后有新内容再更。" class="headerlink" title="今天先到这，以后有新内容再更。"></a>今天先到这，以后有新内容再更。</h3>	  
 	</div>
 
 	<div>
@@ -133,13 +178,13 @@ var _hmt = _hmt || [];
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2015/10/06/如何使用gulp对文件进行压缩/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2016/05/16/创建git仓库/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/07/26/用hexo搭建github博客/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2015/11/19/学习使用gulp-jade模板引擎/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -178,7 +223,7 @@ var _hmt = _hmt || [];
   <h2 class="title">留言</h2>
 
   
-  	 <div class="ds-thread" data-thread-key="2015/08/10/node-js的运用/" data-title="nodejs的运用" data-url="http://liushengguang.github.io/2015/08/10/node-js的运用/"></div>  
+  	 <div class="ds-thread" data-thread-key="2015/12/17/jade基本语法介绍/" data-title="jade基本语法介绍" data-url="http://liushengguang.github.io/2015/12/17/jade基本语法介绍/"></div>  
   
 </section>
 
@@ -192,7 +237,7 @@ var _hmt = _hmt || [];
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015-08-10 
+	2015-12-17 
 	</div>
 	
 

@@ -23,8 +23,102 @@
     </entry>
     
     <entry>
+      <title><![CDATA[jade基本语法介绍]]></title>
+      <url>http://liushengguang.github.io/2015/12/17/jade%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/</url>
+      <content type="html"><![CDATA[<pre><code>之前在博客中介绍了jade模版，在接下来的使用过程中，越来越觉得语法规范化的重要，今天抽
+
+空在这里总结一下这些天使用jade模版的心得。
+</code></pre><h3 id="tag标签"><a href="#tag标签" class="headerlink" title="tag标签"></a>tag标签</h3><a id="more"></a>
+<pre><code>标签都是通过TAB缩进，来代替HTML中的层级包含关系
+
+1、内联书写层级
+
+a、img标签 通过分号区分元素内内容
+
+2、自闭合标签
+
+img、meta、link等自闭合标签会自动识别，也可在标签后添加/强制输出自闭合元素
+</code></pre><h3 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a>style属性</h3><pre><code>图中已完美呈现：
+</code></pre><p><img src="http://i2.buimg.com/ad2c31dddb2630ac.png" alt=""></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><pre><code>使用“=”输出变量值到元素内
+</code></pre><p><img src="http://i3.buimg.com/3756e05d5c6c77e1.png" alt=""></p>
+<pre><code>通过 #{variable} 插入相应的变量值
+</code></pre><p><img src="http://i3.buimg.com/a76c3fe55ede6659.png" alt=""></p>
+<pre><code>这个没怎么用到，先提一提！
+</code></pre><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>html 元素属性通过在标签右边通过括号包含（此处逗号可拆分为多行书写属性的格式）
+</code></pre><p><img src="http://i3.buimg.com/3d2b6547ccac5e80.png" alt=""></p>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><pre><code>通过在文字前面添加竖线符号“|”可让 jade 原样输出内容
+
+在html标签标记后面通过空格隔开文本内容
+
+在html标签标记后通过添加英文句号“.”添加块级文本
+
+上面3个形式的方式效果为：
+</code></pre><p><img src="http://i2.buimg.com/03aaf3cdaf2fcf42.png" alt=""></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre><code>可以通过双斜杠进行注释，jade有3种注释方式，可以分别对应输出html注释、不输出html注
+
+释、块级html注释：
+</code></pre><p><img src="http://i4.buimg.com/e03acb3fb5070e2e.png" alt=""></p>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><pre><code>jade支持通过js语法形式运行一些表达式，最简单常用的就一个迭代可以表达为：
+</code></pre><p><img src="http://i4.buimg.com/19d7527fdf4c7c50.png" alt=""></p>
+<p>是不是很好用！！！</p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><pre><code>jade 支持 if 、case条件判断，类比js的相应语法：
+</code></pre><p><img src="http://i4.buimg.com/612ab8fed6ddbab9.png" alt=""></p>
+<p>js可以直接写在里面，是不是很神奇！！！</p>
+<h3 id="Include"><a href="#Include" class="headerlink" title="Include"></a>Include</h3><pre><code>include.jade文件
+</code></pre><p><img src="http://i4.buimg.com/477132afb83b0227.png" alt=""></p>
+<pre><code>head.jade文件
+</code></pre><p><img src="http://i4.buimg.com/d9f5870bbf65b825.png" alt=""></p>
+<pre><code>包含文件
+</code></pre><p><img src="http://i4.buimg.com/5eb3fcd2f12bbea9.png" alt=""></p>
+<h3 id="今天先到这，以后有新内容再更。"><a href="#今天先到这，以后有新内容再更。" class="headerlink" title="今天先到这，以后有新内容再更。"></a>今天先到这，以后有新内容再更。</h3>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[学习使用gulp-jade模板引擎]]></title>
+      <url>http://liushengguang.github.io/2015/11/19/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8gulp-jade%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</url>
+      <content type="html"><![CDATA[<pre><code>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，对于日益庞大的前端页面
+
+来说，还是用老的字符串拼接的方法来嵌入html内容已经不适应当下的开发趋势了。
+</code></pre><h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><a id="more"></a>
+<pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
+
+其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
+
+2、安装gulp-jade插件，命令：$ npm install -g --save-dev gulp-jade
+
+如果需要权限就在npm之前加上sudo。
+</code></pre><h3 id="2、使用gulp-jade来构建前端模版"><a href="#2、使用gulp-jade来构建前端模版" class="headerlink" title="2、使用gulp-jade来构建前端模版"></a>2、使用gulp-jade来构建前端模版</h3><pre><code>1、创建一个名为jade的文件夹，在文件夹里创建一个名为jade.jade的文件。
+
+2、在jade.jade文件内写上jade规模的模版代码，如下：
+</code></pre><p><img src="http://i2.buimg.com/ebc79103a7bd6b6e.png" alt=""></p>
+<pre><code>3、在jade文件夹同级文件里找到或创建一个名为gulpfile.js的文件，编辑如下内容：
+</code></pre><p><img src="http://i2.buimg.com/619879541b38d409.png" alt=""></p>
+<pre><code>4、在jade文件夹中运行gulp-jade，命令：$ gulp jade 
+
+5、看下在新生成的newhtml文件夹下生成的jade.html：
+</code></pre><p><img src="http://i4.buimg.com/b0843e3bc8b92377.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[伪类的用法]]></title>
+      <url>http://liushengguang.github.io/2015/11/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
+<p>love:link,visited;</p>
+<p>hate:hover,active;</p>
+<a id="more"></a>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>first-line</p>
+<p>first-letter</p>
+<p>selection</p>
+<p>before</p>
+<p>after</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何使用gulp对文件进行压缩]]></title>
-      <url>http://liushengguang.github.io/2016/05/16/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gulp%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9/</url>
+      <url>http://liushengguang.github.io/2015/10/06/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gulp%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9/</url>
       <content type="html"><![CDATA[<h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><p>1、创建项目文件夹，然后项目初始化：$ npm init ;</p>
 <p>2、全局安装gulp：$ npm install –global gulp ;</p>
 <p>3、作为项目的开发依赖（devDependencies）安装：$ npm install –save-dev gulp ;<br><a id="more"></a><br>4、在创建的文件夹下，创建一个名为gulpfile.js的文件，内容为：</p>
@@ -72,48 +166,6 @@
 <p>  .pipe(gulp.dest(‘new/‘));//新文件放到new文件夹下</p>
 <p>});</p>
 <p>3、运行gulp：默认执行default函数</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[学习使用gulp-jade模板引擎]]></title>
-      <url>http://liushengguang.github.io/2015/11/19/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8gulp-jade%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/</url>
-      <content type="html"><![CDATA[<pre><code>Jade是一个基于javascript，可以运行在node与浏览器环境的一个前端模板引擎，对于日益庞大的前端页面
-
-来说，还是用老的字符串拼接的方法来嵌入html内容已经不适应当下的开发趋势了。
-</code></pre><h3 id="1、安装gulp-jade"><a href="#1、安装gulp-jade" class="headerlink" title="1、安装gulp-jade"></a>1、安装gulp-jade</h3><a id="more"></a>
-<pre><code>1、jade基于nodejs的开发环境，所以我们首先要安装nodejs,nodejs的安装方法
-
-其实在之前的博客中已经提及了，这里就不在赘述了，[nodejs官网](https://nodejs.org/en/)可以直接下载安装包。
-
-2、安装gulp-jade插件，命令：$ npm install -g --save-dev gulp-jade
-
-如果需要权限就在npm之前加上sudo。
-</code></pre><h3 id="2、使用gulp-jade来构建前端模版"><a href="#2、使用gulp-jade来构建前端模版" class="headerlink" title="2、使用gulp-jade来构建前端模版"></a>2、使用gulp-jade来构建前端模版</h3><pre><code>1、创建一个名为jade的文件夹，在文件夹里创建一个名为jade.jade的文件。
-
-2、在jade.jade文件内写上jade规模的模版代码，如下：
-</code></pre><p><img src="http://i2.buimg.com/ebc79103a7bd6b6e.png" alt=""></p>
-<pre><code>3、在jade文件夹同级文件里找到或创建一个名为gulpfile.js的文件，编辑如下内容：
-</code></pre><p><img src="http://i2.buimg.com/619879541b38d409.png" alt=""></p>
-<pre><code>4、在jade文件夹中运行gulp-jade，命令：$ gulp jade 
-
-5、看下在新生成的newhtml文件夹下生成的jade.html：
-</code></pre><p><img src="http://i4.buimg.com/b0843e3bc8b92377.png" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[伪类的用法]]></title>
-      <url>http://liushengguang.github.io/2015/11/12/%E4%BC%AA%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>爱恨法则记忆：</p>
-<p>love:link,visited;</p>
-<p>hate:hover,active;</p>
-<a id="more"></a>
-<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>first-line</p>
-<p>first-letter</p>
-<p>selection</p>
-<p>before</p>
-<p>after</p>
 ]]></content>
     </entry>
     
