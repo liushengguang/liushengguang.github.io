@@ -29,7 +29,7 @@
 <p><cite>如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”如果radio需要水平排列，只需要在label标签上添加类名“radio-inline<cite></cite></cite></p>
 <h5 id="6、按钮"><a href="#6、按钮" class="headerlink" title="6、按钮"></a>6、按钮</h5><p><cite>默认按钮：Bootstrap框架首先通过基础类名“.btn”定义了一个基础的按钮风格，然后通过“.btn-default”定义了一个默认的按钮风格。默认按钮的风格就是在基础按钮的风格的基础上修改了按钮的背景颜色、边框颜色和文本颜色。<cite></cite></cite></p>
 <p><cite>.btn类还支持a标签，type-submit的input标签;.btn-primary主要按钮;btn-success成功按钮;btn-warning警告按钮;btn-danger危险按钮;btn-link链接按钮<cite></cite></cite></p>
-<p><cite><br>按钮大小:.bth-lg大型按钮;btn-sm小型按钮;btn-xs超小型按钮<cite></cite></cite></p>
+<p><cite>按钮大小:.bth-lg大型按钮;btn-sm小型按钮;btn-xs超小型按钮<cite></cite></cite></p>
 ]]></content>
     </entry>
     
