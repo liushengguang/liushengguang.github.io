@@ -109,6 +109,58 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2016-05-23 </div>
+			<div class="article-title"><a href="/2016/05/23/经典JS面试题/" >经典JS面试题</a></div>						
+		</h3>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<pre><code>function Foo() {
+
+getName = function () { alert (1); };
+
+return this;
+
+}
+Foo.getName = function () { alert (2);};
+
+Foo.prototype.getName = function () { alert (3);};
+
+var getName = function () { alert (4);};
+
+function getName() { alert (5);}
+</code></pre><p>请写出以下输出结果：</p>
+<p>Foo.getName();2</p>
+<p>getName();4</p>
+<p>Foo().getName();1</p>
+<p>getName();1</p>
+<p>new Foo.getName();2</p>
+<p>new Foo().getName();3</p>
+<p>new new Foo().getName();3</p>
+<p>第一问的 Foo.getName 自然是访问Foo函数上存储的静态属性，自然是2，没什么可说的。</p>
+<p>第二问，直接调用 getName 函数。既然是直接调用那么就是访问当前上文作用域内的叫getName的函数，所以跟1 2 3都没什么关系。此题有无数面试者回答为5。此处有两个坑，一是变量声明提升，二是函数表达式。</p>
+<p>所有声明变量或声明函数都会被提升到当前函数的顶部。</p>
+<p>第三问的 Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。</p>
+<p>Foo函数的第一句  getName = function () { alert (1); };  是一句函数赋值语句，注意它没有var声明，所以先向当前Foo函数作用域内寻找getName变量，没有。再向当前函数作用域上层，即外层作用域内寻找是否含有getName变量，找到了，也就是第二问中的alert(4)函数，将此变量的值赋值为 function(){alert(1)}。</p>
+<p>第四问，直接调用getName函数，相当于 window.getName() ，因为这个变量已经被Foo函数执行时修改了，遂结果与第三问相同，为1。</p>
+<p>第五问 new Foo.getName(); ,此处考察的是js的运算符优先级问题。点（.）的优先级高于new操作，遂相当于是:new (Foo.getName)();</p>
+<p>第六问 new Foo().getName() ，首先看运算符优先级括号高于new，实际执行为(new Foo()).getName()。原题中，返回的是this，而this在构造函数中本来就代表当前实例化对象，遂最终Foo函数返回实例化对象。</p>
+<p>之后调用实例化对象的getName函数，因为在Foo构造函数中没有为实例化对象添加任何属性，遂到当前对象的原型对象（prototype）中寻找getName，找到了，输出3。</p>
+
+	
+	</div>
+  <a type="button" href="/2016/05/23/经典JS面试题/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2016-05-18 </div>
 			<div class="article-title"><a href="/2016/05/18/Bootstrap的使用/" >Bootstrap的使用</a></div>						
 		</h3>
@@ -330,11 +382,12 @@
 	<div id="sidebar">
 	
 			
-  <div class="form-group has-success has-feedback" id="site_search">
-    <form class="site-search-form">
-        <input type="text" id="st-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control" />
-    </form>
-  </div>  
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
 
 
 		
@@ -346,6 +399,8 @@
 		<ul class="tag_box inline list-unstyled">		
 		
 			<li><a href="/tags/gulp-concat/">gulp-concat<span>1</span></a></li>
+		
+			<li><a href="/tags/函数声明/">函数声明<span>1</span></a></li>
 		
 			<li><a href="/tags/jade-前端模版-gulp/">jade 前端模版 gulp<span>1</span></a></li>
 		
@@ -363,6 +418,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/05/23/经典JS面试题/" ><i class="fa fa-file-o"></i>经典JS面试题</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/18/Bootstrap的使用/" ><i class="fa fa-file-o"></i>Bootstrap的使用</a>
       </li>
     
@@ -376,10 +435,6 @@
     
       <li>
         <a href="/2015/11/12/伪类的用法/" ><i class="fa fa-file-o"></i>伪类的用法</a>
-      </li>
-    
-      <li>
-        <a href="/2015/10/06/如何使用gulp对文件进行压缩/" ><i class="fa fa-file-o"></i>如何使用gulp对文件进行压缩</a>
       </li>
     
   </ul>
@@ -444,15 +499,6 @@
 </span> </footer>
 </div> <!-- container-narrow -->
   
-  <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'ZP2ZSuHgipSZfRyU8uTR','2.0.0');
-  </script>
-
 
 
   
