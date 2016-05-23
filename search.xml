@@ -27,8 +27,7 @@ function getName() { alert (5);}
 <p>getName();1</p>
 <p>new Foo.getName();2</p>
 <p>new Foo().getName();3</p>
-<p>new new Foo().getName();3</p>
-<p>第一问的 Foo.getName 自然是访问Foo函数上存储的静态属性，自然是2，没什么可说的。</p>
+<p>new new Foo().getName();3<br><a id="more"></a><br>第一问的 Foo.getName 自然是访问Foo函数上存储的静态属性，自然是2，没什么可说的。</p>
 <p>第二问，直接调用 getName 函数。既然是直接调用那么就是访问当前上文作用域内的叫getName的函数，所以跟1 2 3都没什么关系。此题有无数面试者回答为5。此处有两个坑，一是变量声明提升，二是函数表达式。</p>
 <p>所有声明变量或声明函数都会被提升到当前函数的顶部。</p>
 <p>第三问的 Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。</p>
