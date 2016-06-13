@@ -4,6 +4,80 @@
   
     
     <entry>
+      <title><![CDATA[php浅谈]]></title>
+      <url>http://liushengguang.github.io/2016/06/13/php%E6%B5%85%E8%B0%88/</url>
+      <content type="html"><![CDATA[<h4 id="PHP是一门后台编程语言-是目前比较主流的后台编程语言。"><a href="#PHP是一门后台编程语言-是目前比较主流的后台编程语言。" class="headerlink" title="PHP是一门后台编程语言,是目前比较主流的后台编程语言。"></a>PHP是一门后台编程语言,是目前比较主流的后台编程语言。</h4><h3 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h3><h5 id="Apache是Web服务器软件，它可以运行在几乎所有的计算机平台上面，这是最流行的Web服务器软件之一。"><a href="#Apache是Web服务器软件，它可以运行在几乎所有的计算机平台上面，这是最流行的Web服务器软件之一。" class="headerlink" title="Apache是Web服务器软件，它可以运行在几乎所有的计算机平台上面，这是最流行的Web服务器软件之一。"></a>Apache是Web服务器软件，它可以运行在几乎所有的计算机平台上面，这是最流行的Web服务器软件之一。</h5><h5 id="MySQL是关系型数据库管理系统，拥有体积小-速度快-开放源码等优点。"><a href="#MySQL是关系型数据库管理系统，拥有体积小-速度快-开放源码等优点。" class="headerlink" title="MySQL是关系型数据库管理系统，拥有体积小,速度快,开放源码等优点。"></a>MySQL是关系型数据库管理系统，拥有体积小,速度快,开放源码等优点。</h5><h5 id="XAMPP是一个功能强大的建-Apache-MySQL-PHP-Perl-软件站集成软件包，引入XAMPP的目的-手动安装Apache-MySQL-PHP环-境过于复杂-而XAMPP帮我们集成了这个环境-只需-点击安装即可。"><a href="#XAMPP是一个功能强大的建-Apache-MySQL-PHP-Perl-软件站集成软件包，引入XAMPP的目的-手动安装Apache-MySQL-PHP环-境过于复杂-而XAMPP帮我们集成了这个环境-只需-点击安装即可。" class="headerlink" title="XAMPP是一个功能强大的建 (Apache+MySQL+PHP+Perl)软件站集成软件包，引入XAMPP的目的:手动安装Apache+MySQL+PHP环 境过于复杂,而XAMPP帮我们集成了这个环境,只需 点击安装即可。"></a>XAMPP是一个功能强大的建 (Apache+MySQL+PHP+Perl)软件站集成软件包，引入XAMPP的目的:手动安装Apache+MySQL+PHP环 境过于复杂,而XAMPP帮我们集成了这个环境,只需 点击安装即可。</h5><a id="more"></a>
+<h3 id="php基本语法"><a href="#php基本语法" class="headerlink" title="php基本语法"></a>php基本语法</h3><h4 id="php标记"><a href="#php标记" class="headerlink" title="php标记"></a>php标记</h4><p>&lt;?php</p>
+<p>你的php代码写这</p>
+<p>?&gt;</p>
+<h4 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h4><p>变量以$开头,后面跟变量名</p>
+<p>变量只能由字母,数字,下划线组成,不以数字开头</p>
+<p>变量名区分大小写</p>
+<p>php于javascript类似是弱类型语言,不需要事先声明变量的数据类型</p>
+<h4 id="变量的变量"><a href="#变量的变量" class="headerlink" title="变量的变量"></a>变量的变量</h4><p>$var_1 = “hello”; $$var_1 = “world”;</p>
+<p>echo $var_1; //输出hello </p>
+<p>echo $hello; //输出world </p>
+<p>echo ${$var_1} //输出world</p>
+<h3 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h3><p>php提供了很多预定义的变量,用于提供大量与环境有关的信息，打印/输出超全局变量:prient_r($_SERVER)</p>
+<h4 id="1-SERVER-服务器变量-该全局变量包含着服务器和客户端配置及当前请求环境的有关信息"><a href="#1-SERVER-服务器变量-该全局变量包含着服务器和客户端配置及当前请求环境的有关信息" class="headerlink" title="(1)$_SERVER 服务器变量, 该全局变量包含着服务器和客户端配置及当前请求环境的有关信息"></a>(1)$_SERVER 服务器变量, 该全局变量包含着服务器和客户端配置及当前请求环境的有关信息</h4><p>$_SERVER[‘SERVER_NAME’]; 当前运行脚本所在的服务器的主机名 </p>
+<p>$_SERVER[‘REMOTE_ADDR’]: 客户端IP地址  </p>
+<p>$_SERVER[‘REQUEST_URI’]: URL的路径部分      </p>
+<p>$_SERVER[‘HTTP_USER_AGENT’]: 操作系统和浏览器的有关信息</p>
+<h4 id="2-GET-该变量包含使用-GET-方法传递的参数的有关信息"><a href="#2-GET-该变量包含使用-GET-方法传递的参数的有关信息" class="headerlink" title="(2)$_GET 该变量包含使用 GET 方法传递的参数的有关信息"></a>(2)$_GET 该变量包含使用 GET 方法传递的参数的有关信息</h4><p>例:url: <a href="http://localhost/test.php?id=100&amp;page=2" target="_blank" rel="external">http://localhost/test.php?id=100&amp;page=2</a> </p>
+<p>$id = $_GET[‘id’];</p>
+<p>$page = $_GET[‘page’];</p>
+<h4 id="3-POST-该变量包含使用-POST-方法传递的参数的有关信息"><a href="#3-POST-该变量包含使用-POST-方法传递的参数的有关信息" class="headerlink" title="(3)$_POST 该变量包含使用 POST 方法传递的参数的有关信息"></a>(3)$_POST 该变量包含使用 POST 方法传递的参数的有关信息</h4><p>例:html:<br>&lt;form name=”reg” action=”test.php” method=”post”&gt; 用户名:&lt;input type=”text” name=”username” /&gt; 密码: &lt;input type=”password” name=”passwd”/&gt; &lt;input type=”submit” value=”提交” /&gt;</p>
+<form name="reg" action="test.php" method="post"> 用户名:<input type="text" name="username"> 密码: &lt;input type=”password” name=”passwd”/&gt; <input type="submit" value="提交"><br></form>
+
+<p>php:</p>
+<p>$username = $_POST[‘username’]; </p>
+<p>$passwd = $_POST[‘passwd’];</p>
+<h4 id="4-REQUEST-该变量记录着通过各种输入方法传递给脚本的变量"><a href="#4-REQUEST-该变量记录着通过各种输入方法传递给脚本的变量" class="headerlink" title="(4)$_REQUEST 该变量记录着通过各种输入方法传递给脚本的变量"></a>(4)$_REQUEST 该变量记录着通过各种输入方法传递给脚本的变量</h4><p>如GET POST, 但不要用这个超级全局变量,因为它不安全而且速度比较慢</p>
+<h4 id="5-COOKIE-cookie变量数组"><a href="#5-COOKIE-cookie变量数组" class="headerlink" title="(5)$_COOKIE cookie变量数组"></a>(5)$_COOKIE cookie变量数组</h4><h4 id="6-SESSION-会话变量数组"><a href="#6-SESSION-会话变量数组" class="headerlink" title="(6)$_SESSION 会话变量数组"></a>(6)$_SESSION 会话变量数组</h4><h4 id="7-FILES-与上传文件有关的变量数组"><a href="#7-FILES-与上传文件有关的变量数组" class="headerlink" title="(7)$_FILES 与上传文件有关的变量数组"></a>(7)$_FILES 与上传文件有关的变量数组</h4><h4 id="8-ENV-环境变量数组"><a href="#8-ENV-环境变量数组" class="headerlink" title="(8)$_ENV 环境变量数组"></a>(8)$_ENV 环境变量数组</h4><h4 id="9-GLOBALS-所有全局变量数组"><a href="#9-GLOBALS-所有全局变量数组" class="headerlink" title="(9)$GLOBALS 所有全局变量数组"></a>(9)$GLOBALS 所有全局变量数组</h4><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><h4 id="1、内置常量"><a href="#1、内置常量" class="headerlink" title="1、内置常量"></a>1、内置常量</h4><p>PHP_OS php所在操作系统的名称 </p>
+<p>PHP_VERSION 当前php的版本号</p>
+<h4 id="2、魔术常量"><a href="#2、魔术常量" class="headerlink" title="2、魔术常量"></a>2、魔术常量</h4><p><strong>LINE</strong> 文件中的当前行号;</p>
+<p><strong>FILE</strong> 文件的完整路径和文件名;</p>
+<p><strong>FUNCTION</strong> 函数名称; </p>
+<p><strong>CLASS</strong> 类的名称; </p>
+<p><strong>METHOD</strong> 类的方法名;</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="标量数据类型"><a href="#标量数据类型" class="headerlink" title="标量数据类型"></a>标量数据类型</h4><p>1、字符串</p>
+<p>字符串有三种定义方式:单引号,双引号,定界符(heredoc);单引号字符串中出现的变量不会被变量的值替代；双引号字符串中的变量会被变量值替代。</p>
+<p>2、整型integer</p>
+<p>3、浮点型float</p>
+<p>4、布尔型bool</p>
+<h4 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h4><p>5、数组</p>
+<p>6、对象</p>
+<h4 id="特殊数据类型"><a href="#特殊数据类型" class="headerlink" title="特殊数据类型"></a>特殊数据类型</h4><p>7、文件</p>
+<p>8、null</p>
+<h4 id="类型相关函数"><a href="#类型相关函数" class="headerlink" title="类型相关函数"></a>类型相关函数</h4><p>1.gettype() 返回变量的类型，共有8个可能的值 string integer float boolean array  object null unknow。</p>
+<p>2.is_type()查看变量是否属于某个类型,是返回TRUE ,否返回FALSE;</p>
+<p>3.var_dump()获取变量的值和类型的详细信息</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="一、算术运算符"><a href="#一、算术运算符" class="headerlink" title="一、算术运算符"></a>一、算术运算符</h4><p>+加法运算符</p>
+<p>-加法运算符</p>
+<p>*乘法运算符</p>
+<p>/除法运算符</p>
+<p>%取模运算符(求余数)</p>
+<h4 id="二、赋值运算符"><a href="#二、赋值运算符" class="headerlink" title="二、赋值运算符"></a>二、赋值运算符</h4><p>$a = 5  赋值</p>
+<p>$a += 5  加法赋值  </p>
+<p>$a -= 5  减法赋值</p>
+<p>$a *= 5  乘法赋值</p>
+<p>$a /= 5  除法赋值</p>
+<p>$a .= 5  拼接赋值</p>
+<h4 id="三、字符串运算"><a href="#三、字符串运算" class="headerlink" title="三、字符串运算"></a>三、字符串运算</h4><p>字符串运算符用于拼接字符串//.表示拼接前后两个字符串</p>
+<h4 id="四、递增与递减"><a href="#四、递增与递减" class="headerlink" title="四、递增与递减"></a>四、递增与递减</h4><p>++$i 先给$i的值加1，再返回$i;</p>
+<p>$i++ 先返回$i,再给$i的值加1;</p>
+<p>–$i 先给$i的值减1，再返回$i;</p>
+<p>$i– 先返回$i,再给$i的值减1;</p>
+<h4 id="五、逻辑运算符"><a href="#五、逻辑运算符" class="headerlink" title="五、逻辑运算符"></a>五、逻辑运算符</h4><p>&amp;&amp;  and  逻辑与  </p>
+<p>||  or   逻辑或</p>
+<p>!         逻辑非 </p>
+<p>xor,     异或（有且仅有一个为true，则返回true） </p>
+<h4 id="六、比较运算符"><a href="#六、比较运算符" class="headerlink" title="六、比较运算符"></a>六、比较运算符</h4><p>大于  小于  大于或等于  小于或等于  不等于  双等于 全等于  全不等</p>
+<h4 id="七、三元运算符"><a href="#七、三元运算符" class="headerlink" title="七、三元运算符"></a>七、三元运算符</h4><p>语法： expression1 ? expression2 : expression3  </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[经典JS面试题]]></title>
       <url>http://liushengguang.github.io/2016/05/23/%E7%BB%8F%E5%85%B8JS%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
       <content type="html"><![CDATA[<pre><code>function Foo() {
